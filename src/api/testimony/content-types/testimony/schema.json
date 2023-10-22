@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonies",
+  "info": {
+    "singularName": "testimony",
+    "pluralName": "testimonies",
+    "displayName": "Testimony",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Institution": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "text"
+    },
+    "ProfilePic": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Name"
+    }
+  }
+}

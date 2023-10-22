@@ -1,0 +1,53 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "coverPa": {
+      "type": "string"
+    },
+    "coverDescription": {
+      "type": "string"
+    },
+    "InstitutionDescriptionTitle": {
+      "type": "string"
+    },
+    "InstitutionDescription": {
+      "type": "string"
+    },
+    "skillgapPic": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "skillgapTitle": {
+      "type": "string"
+    },
+    "skillGapDescription": {
+      "type": "text"
+    },
+    "tourismFutureTitle": {
+      "type": "string"
+    },
+    "tourismFutureDescription": {
+      "type": "text"
+    },
+    "tourismFutureDes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
