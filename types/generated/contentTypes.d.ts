@@ -817,15 +817,16 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     singularName: 'home-page';
     pluralName: 'home-pages';
     displayName: 'Home page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     coverPa: Attribute.String;
-    coverDescription: Attribute.String;
+    coverDescription: Attribute.Text;
     InstitutionDescriptionTitle: Attribute.String;
-    InstitutionDescription: Attribute.String;
+    InstitutionDescription: Attribute.Text;
     skillgapPic: Attribute.Media;
     skillgapTitle: Attribute.String;
     skillGapDescription: Attribute.Text;

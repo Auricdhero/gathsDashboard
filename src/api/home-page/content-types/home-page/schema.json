@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "Home page"
+    "displayName": "Home page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,20 +16,21 @@
       "type": "string"
     },
     "coverDescription": {
-      "type": "string"
+      "type": "text"
     },
     "InstitutionDescriptionTitle": {
       "type": "string"
     },
     "InstitutionDescription": {
-      "type": "string"
+      "type": "text"
     },
     "skillgapPic": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "skillgapTitle": {
       "type": "string"
@@ -43,11 +45,12 @@
       "type": "text"
     },
     "tourismFutureDes": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }
