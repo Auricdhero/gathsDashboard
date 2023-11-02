@@ -777,6 +777,46 @@ export interface ApiBlogBlog extends Schema.CollectionType {
   };
 }
 
+export interface ApiChapterExecutiveChapterExecutive
+  extends Schema.CollectionType {
+  collectionName: 'chapter_executives';
+  info: {
+    singularName: 'chapter-executive';
+    pluralName: 'chapter-executives';
+    displayName: 'chapterExecutive';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Picture: Attribute.Media;
+    Name: Attribute.String;
+    Title: Attribute.String;
+    institution: Attribute.String;
+    local_chapter: Attribute.Relation<
+      'api::chapter-executive.chapter-executive',
+      'manyToOne',
+      'api::local-chapter.local-chapter'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::chapter-executive.chapter-executive',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::chapter-executive.chapter-executive',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExecutiveExecutive extends Schema.CollectionType {
   collectionName: 'executives';
   info: {
@@ -834,6 +874,8 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     tourismFutureDescription: Attribute.Text;
     tourismFutureDes: Attribute.Media;
     coverImg: Attribute.Media;
+    executiveyear: Attribute.String;
+    executiveSectionTitle: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -903,6 +945,11 @@ export interface ApiLocalChapterLocalChapter extends Schema.CollectionType {
     FaceBook: Attribute.UID;
     Instagram: Attribute.UID;
     Twitter: Attribute.UID;
+    chapter_executives: Attribute.Relation<
+      'api::local-chapter.local-chapter',
+      'oneToMany',
+      'api::chapter-executive.chapter-executive'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1037,6 +1084,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::blog.blog': ApiBlogBlog;
+      'api::chapter-executive.chapter-executive': ApiChapterExecutiveChapterExecutive;
       'api::executive.executive': ApiExecutiveExecutive;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::hospitality-report.hospitality-report': ApiHospitalityReportHospitalityReport;

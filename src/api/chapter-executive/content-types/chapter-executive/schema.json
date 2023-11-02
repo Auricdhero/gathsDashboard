@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chapter_executives",
+  "info": {
+    "singularName": "chapter-executive",
+    "pluralName": "chapter-executives",
+    "displayName": "chapterExecutive",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Picture": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "institution": {
+      "type": "string"
+    },
+    "local_chapter": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::local-chapter.local-chapter",
+      "inversedBy": "chapter_executives"
+    }
+  }
+}

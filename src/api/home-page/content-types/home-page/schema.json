@@ -53,11 +53,18 @@
       ]
     },
     "coverImg": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "executiveyear": {
+      "type": "string"
+    },
+    "executiveSectionTitle": {
+      "type": "string"
     }
   }
 }
