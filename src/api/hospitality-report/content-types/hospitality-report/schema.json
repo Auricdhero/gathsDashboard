@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "hospitality_reports",
+  "info": {
+    "singularName": "hospitality-report",
+    "pluralName": "hospitality-reports",
+    "displayName": "Hospitality Report"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "coverImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "body": {
+      "type": "richtext"
+    }
+  }
+}

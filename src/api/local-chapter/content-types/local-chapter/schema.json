@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "local_chapters",
+  "info": {
+    "singularName": "local-chapter",
+    "pluralName": "local-chapters",
+    "displayName": "localChapter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ChapterImgProfile": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "ChaterName": {
+      "type": "string"
+    },
+    "ChapterDescription": {
+      "type": "text"
+    },
+    "FaceBook": {
+      "type": "uid"
+    },
+    "Instagram": {
+      "type": "uid"
+    },
+    "Twitter": {
+      "type": "uid"
+    }
+  }
+}

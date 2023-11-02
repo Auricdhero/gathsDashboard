@@ -833,6 +833,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     tourismFutureTitle: Attribute.String;
     tourismFutureDescription: Attribute.Text;
     tourismFutureDes: Attribute.Media;
+    coverImg: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -844,6 +845,108 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHospitalityReportHospitalityReport
+  extends Schema.SingleType {
+  collectionName: 'hospitality_reports';
+  info: {
+    singularName: 'hospitality-report';
+    pluralName: 'hospitality-reports';
+    displayName: 'Hospitality Report';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    coverImg: Attribute.Media;
+    body: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hospitality-report.hospitality-report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hospitality-report.hospitality-report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLocalChapterLocalChapter extends Schema.CollectionType {
+  collectionName: 'local_chapters';
+  info: {
+    singularName: 'local-chapter';
+    pluralName: 'local-chapters';
+    displayName: 'localChapter';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    ChapterImgProfile: Attribute.Media & Attribute.Required;
+    ChaterName: Attribute.String;
+    ChapterDescription: Attribute.Text;
+    FaceBook: Attribute.UID;
+    Instagram: Attribute.UID;
+    Twitter: Attribute.UID;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::local-chapter.local-chapter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::local-chapter.local-chapter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSkillgapReportSkillgapReport extends Schema.SingleType {
+  collectionName: 'skillgap_reports';
+  info: {
+    singularName: 'skillgap-report';
+    pluralName: 'skillgap-reports';
+    displayName: 'skillgapReport';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    skillGapTitle: Attribute.String;
+    body: Attribute.RichText;
+    coverImg: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::skillgap-report.skillgap-report',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::skillgap-report.skillgap-report',
       'oneToOne',
       'admin::user'
     > &
@@ -886,6 +989,36 @@ export interface ApiTestimonyTestimony extends Schema.CollectionType {
   };
 }
 
+export interface ApiUniLogoUniLogo extends Schema.CollectionType {
+  collectionName: 'uni_logos';
+  info: {
+    singularName: 'uni-logo';
+    pluralName: 'uni-logos';
+    displayName: 'uniLogo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    img: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::uni-logo.uni-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::uni-logo.uni-logo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -906,7 +1039,11 @@ declare module '@strapi/types' {
       'api::blog.blog': ApiBlogBlog;
       'api::executive.executive': ApiExecutiveExecutive;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::hospitality-report.hospitality-report': ApiHospitalityReportHospitalityReport;
+      'api::local-chapter.local-chapter': ApiLocalChapterLocalChapter;
+      'api::skillgap-report.skillgap-report': ApiSkillgapReportSkillgapReport;
       'api::testimony.testimony': ApiTestimonyTestimony;
+      'api::uni-logo.uni-logo': ApiUniLogoUniLogo;
     }
   }
 }

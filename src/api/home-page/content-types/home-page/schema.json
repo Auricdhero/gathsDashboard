@@ -51,6 +51,13 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "coverImg": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

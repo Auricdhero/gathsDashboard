@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "skillgap_reports",
+  "info": {
+    "singularName": "skillgap-report",
+    "pluralName": "skillgap-reports",
+    "displayName": "skillgapReport",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "skillGapTitle": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "coverImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

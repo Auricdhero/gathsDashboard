@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "uni_logos",
+  "info": {
+    "singularName": "uni-logo",
+    "pluralName": "uni-logos",
+    "displayName": "uniLogo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
