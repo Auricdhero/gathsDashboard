@@ -35,11 +35,11 @@
     "Twitter": {
       "type": "uid"
     },
-    "chapter_executives": {
+    "chapter_executive": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::chapter-executive.chapter-executive",
-      "mappedBy": "local_chapter"
+      "inversedBy": "local_chapters"
     }
   }
 }

@@ -794,9 +794,9 @@ export interface ApiChapterExecutiveChapterExecutive
     Name: Attribute.String;
     Title: Attribute.String;
     institution: Attribute.String;
-    local_chapter: Attribute.Relation<
+    local_chapters: Attribute.Relation<
       'api::chapter-executive.chapter-executive',
-      'manyToOne',
+      'oneToMany',
       'api::local-chapter.local-chapter'
     >;
     createdAt: Attribute.DateTime;
@@ -945,9 +945,9 @@ export interface ApiLocalChapterLocalChapter extends Schema.CollectionType {
     FaceBook: Attribute.UID;
     Instagram: Attribute.UID;
     Twitter: Attribute.UID;
-    chapter_executives: Attribute.Relation<
+    chapter_executive: Attribute.Relation<
       'api::local-chapter.local-chapter',
-      'oneToMany',
+      'manyToOne',
       'api::chapter-executive.chapter-executive'
     >;
     createdAt: Attribute.DateTime;

@@ -29,11 +29,11 @@
     "institution": {
       "type": "string"
     },
-    "local_chapter": {
+    "local_chapters": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::local-chapter.local-chapter",
-      "inversedBy": "chapter_executives"
+      "mappedBy": "chapter_executive"
     }
   }
 }
