@@ -817,6 +817,40 @@ export interface ApiChapterExecutiveChapterExecutive
   };
 }
 
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Description: Attribute.Text;
+    Date: Attribute.DateTime;
+    slug: Attribute.UID<'api::event.event', 'Title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiExecutiveExecutive extends Schema.CollectionType {
   collectionName: 'executives';
   info: {
@@ -851,6 +885,39 @@ export interface ApiExecutiveExecutive extends Schema.CollectionType {
   };
 }
 
+export interface ApiHistoryOfGathHistoryOfGath extends Schema.SingleType {
+  collectionName: 'history_of_gaths';
+  info: {
+    singularName: 'history-of-gath';
+    pluralName: 'history-of-gaths';
+    displayName: 'history of GATHS';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    body: Attribute.RichText;
+    Summary: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::history-of-gath.history-of-gath',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::history-of-gath.history-of-gath',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_pages';
   info: {
@@ -876,6 +943,7 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
     coverImg: Attribute.Media;
     executiveyear: Attribute.String;
     executiveSectionTitle: Attribute.String;
+    PartnerSection: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -961,6 +1029,37 @@ export interface ApiLocalChapterLocalChapter extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::local-chapter.local-chapter',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPartnerPartner extends Schema.CollectionType {
+  collectionName: 'partners';
+  info: {
+    singularName: 'partner';
+    pluralName: 'partners';
+    displayName: 'Partners and Sponsors';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Logo: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::partner.partner',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::partner.partner',
       'oneToOne',
       'admin::user'
     > &
@@ -1085,10 +1184,13 @@ declare module '@strapi/types' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::blog.blog': ApiBlogBlog;
       'api::chapter-executive.chapter-executive': ApiChapterExecutiveChapterExecutive;
+      'api::event.event': ApiEventEvent;
       'api::executive.executive': ApiExecutiveExecutive;
+      'api::history-of-gath.history-of-gath': ApiHistoryOfGathHistoryOfGath;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::hospitality-report.hospitality-report': ApiHospitalityReportHospitalityReport;
       'api::local-chapter.local-chapter': ApiLocalChapterLocalChapter;
+      'api::partner.partner': ApiPartnerPartner;
       'api::skillgap-report.skillgap-report': ApiSkillgapReportSkillgapReport;
       'api::testimony.testimony': ApiTestimonyTestimony;
       'api::uni-logo.uni-logo': ApiUniLogoUniLogo;

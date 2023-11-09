@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "history_of_gaths",
+  "info": {
+    "singularName": "history-of-gath",
+    "pluralName": "history-of-gaths",
+    "displayName": "history of GATHS",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "richtext"
+    },
+    "Summary": {
+      "type": "text"
+    }
+  }
+}

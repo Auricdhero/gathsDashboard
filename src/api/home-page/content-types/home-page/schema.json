@@ -65,6 +65,9 @@
     },
     "executiveSectionTitle": {
       "type": "string"
+    },
+    "PartnerSection": {
+      "type": "string"
     }
   }
 }
