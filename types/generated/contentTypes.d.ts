@@ -833,6 +833,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     Description: Attribute.Text;
     Date: Attribute.DateTime;
     slug: Attribute.UID<'api::event.event', 'Title'>;
+    flyer: Attribute.Media;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
