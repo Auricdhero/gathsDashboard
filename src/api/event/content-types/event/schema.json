@@ -19,18 +19,22 @@
       "type": "text"
     },
     "Date": {
-      "type": "datetime"
+      "type": "date"
     },
     "slug": {
       "type": "uid",
       "targetField": "Title"
     },
     "flyer": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "Location": {
+      "type": "string"
     }
   }
 }
