@@ -835,6 +835,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     slug: Attribute.UID<'api::event.event', 'Title'>;
     flyer: Attribute.Media;
     Location: Attribute.String;
+    url: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -880,6 +881,36 @@ export interface ApiExecutiveExecutive extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::executive.executive',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiGalleryGallery extends Schema.CollectionType {
+  collectionName: 'galleries';
+  info: {
+    singularName: 'gallery';
+    pluralName: 'galleries';
+    displayName: 'Gallery';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Pics: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::gallery.gallery',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::gallery.gallery',
       'oneToOne',
       'admin::user'
     > &
@@ -1188,6 +1219,7 @@ declare module '@strapi/types' {
       'api::chapter-executive.chapter-executive': ApiChapterExecutiveChapterExecutive;
       'api::event.event': ApiEventEvent;
       'api::executive.executive': ApiExecutiveExecutive;
+      'api::gallery.gallery': ApiGalleryGallery;
       'api::history-of-gath.history-of-gath': ApiHistoryOfGathHistoryOfGath;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::hospitality-report.hospitality-report': ApiHospitalityReportHospitalityReport;

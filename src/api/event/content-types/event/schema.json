@@ -35,6 +35,9 @@
     },
     "Location": {
       "type": "string"
+    },
+    "url": {
+      "type": "uid"
     }
   }
 }
